@@ -1,4 +1,3 @@
-import os
 import osmnx as ox
 import networkx as nx
 from flask import Flask, request, jsonify
