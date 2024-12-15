@@ -1,3 +1,4 @@
+import os
 import osmnx as ox
 import networkx as nx
 from flask import Flask, request, jsonify
@@ -58,3 +59,7 @@ def get_shortest_path():
 
     return jsonify(response)
 
+if __name__ == '__main__':
+    # Use the PORT environment variable, or fallback to port 5000 for local testing
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
